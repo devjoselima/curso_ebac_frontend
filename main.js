@@ -6,28 +6,17 @@ const numB = document.getElementById('n2');
 function validaNumero(){
     if(numB.value > numA.value){
         document.querySelector('.msg-error').style.display = 'none';
+        document.querySelector('.msg-sucess').style.display = 'block';
     }else{
         document.querySelector('.msg-error').style.display = 'block';
+        document.querySelector('.msg-sucess').style.display = 'none';
     }
 }
 
-numB.addEventListener('change', function(e){
-    if(e.target.value <= numA.value){
-        validaNumero()
-    }else{
-        validaNumero()
-    }
-})
 
 form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    
-    if(numB.value > numA.value){
-        document.querySelector('.msg-sucess').style.display = 'block';
-    }else{
-        document.querySelector('.msg-sucess').style.display = 'none';
-    }
+    e.preventDefault();   
+    validaNumero()
 
 })
 
