@@ -1,25 +1,22 @@
-const form = document.getElementById('form');
-const numA = document.getElementById('n1');
-const numB = document.getElementById('n2');
+$(document).ready(function(){
+    
+    $('form').on('submit', function(e){
+        e.preventDefault();        
+        const nomeTarefa = $('#nome-tarefa').val();       
+        const novaTarefa = $(`<li class="tarefa">${nomeTarefa}</li>`);
+        
+        if($('#nome-tarefa').val() != ''){
+            $(novaTarefa).appendTo('ul');
+        }else{
+            alert("Digite uma tarefa!");
+        }       
 
+        $('#nome-tarefa').val('');
 
-function validaNumero(){
-    if(numB.value > numA.value){
-        document.querySelector('.msg-error').style.display = 'none';
-        numB.style.borderBottom = ''
-        document.querySelector('.msg-sucess').style.display = 'block';
-    }else{
-        document.querySelector('.msg-error').style.display = 'block';
-        numB.style.borderBottom = '2px solid red'; 
-        document.querySelector('.msg-sucess').style.display = 'none';
-    }
-}
-
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();   
-    validaNumero()
+        $('li').click(function(){
+            $('li').toggleClass('texto-riscado')
+        })
+    })
 
 })
-
 

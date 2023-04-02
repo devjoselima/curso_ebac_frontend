@@ -5,46 +5,50 @@
     font-family: arial;
 }
 
+body{
+    background-color: #202124;
+    color: #ccc;
+}
+
 .container{
-    margin: 80px auto;
-    max-width: 640px;
-    width: 100%;
+    width: 50%;
+    margin: 60px auto;
+    text-align: center;
 }
 
 form{
-    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
 }
 
-input{
-    display: block;
+form input{
     padding: 8px;
     border: none;
-    border-bottom: 1px solid black;
-    outline: none;
-    margin-bottom: 16px;
-    width: 100%;
-}
-
-button{
-    width: 150px;
-    padding: 8px;
-}
-
-.msg-error,
-.msg-sucess{
-    font-size: 12px;
+    border-bottom: 2px solid #ccc;
+    background-color: #202124;
     color: #fff;
+    outline: 0;
+}
+
+form button{
     padding: 8px;
-    display: none;
+    background-color: #202124;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-left: 16px;
+    cursor: pointer;
 }
 
-.msg-sucess{
-    background-color: rgb(8, 180, 8);
-    margin-top: 16px;
+
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
-.msg-error{
-    background-color: red;
-    margin-bottom: 16px;
+.texto-riscado{
+    text-decoration: line-through;
 }
-
