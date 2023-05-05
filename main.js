@@ -1,23 +1,27 @@
-const url = 'https://api.github.com/users/devjoselima';
-const profileImage = document.getElementById('profile-image');
-const profileName = document.getElementById('profile-name');
-const username = document.getElementById('profile-username');
-const rep = document.getElementById('repositories');
-const follows = document.getElementById('followers');
-const following = document.getElementById('following');
-const link = document.getElementById('link');
+function Pessoa(nome, age){
+    this.name;
+    this.age;
+    this.sayHello = function(){
+        console.log(this.name + " diz olá")
+    }
+}
 
-fetch(url)
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(json){
-        profileImage.src = json.avatar_url;
-        profileName.innerText = json.name;
-        username.innerText = json.login;
-        rep.innerText = json.public_repos;
-        follows.innerText = json.followers;
-        following.innerText = json.following;
-        link.href = json.html_url;
-    })
-    
+function Programador(cargo, salario, linguagem){
+    this.cargo = cargo;
+    this.salario = salario;
+    this.linguagem = linguagem;
+
+    Pessoa.call(this, nome, age);
+}
+
+function Designer(cargo, salario, ferramentas){
+    this.cargo = cargo;
+    this.salario = salario;
+    this.ferramentas = ferramentas;
+
+    Pessoa.call(this, nome, age);
+}
+
+const programador1 = new Programador('Pedro', 20, 'dev front-end', 3000, 'Html,css e js');
+const programador2 = new Programador('José', 19, 'dev full-stack', 5000, 'Html,css,js,node,phyton');
+const designer = new Designer('José', 25, 'designer grafico', 5000, 'Photoshop');
